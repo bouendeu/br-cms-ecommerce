@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="/fragment/head"></head>
+
+<body>
+	<nav th:replace="/fragment/nav:: nav-admin"></nav>
+
+
+	<div class="container"></div>
+
+
+	<div class="container">
+
+		<h1 class="display-2">Categories</h1>
+		<a href="/admin/categories/add" class="btn btn-primary mb-5">Add new</a>
+
+		<div th:if="${message}" th:text="${message}"
+			th:class="${'alert '+ alertClass}"></div>
+		<div th:if="${!categories.empty}">
+			<table class="table sorting" id="pages">
+				<tr class="home">
+					<th>Name</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+				<tr th:each="category:${categories}" th:id="'id_'+${category.id}">
+					<td th:text="${category.name}"></td>
+					<td><a th:href="@{'/admin/categories/edit/'+${category.id}}">Edit</a></td>
+					<td><a 
+						th:href="@{'/admin/categories/delete/'+${category.id}}"
+						class="confirmDeletion">Delete</a></td>
+				</tr>
+
+
+			</table>
+
+
+		</div>
+		<div th:unless="${!categories.empty}">
+
+
+			<h2 class="display-4">there are categories at the moment</h2>
+		</div>
+
+	</div>
+
+	<footer th:replace="/fragment/footer"></footer>
+	<script>
+	let token = $("meta[name='_csrf']").attr("content");
+    let header = $("meta[name='_csrf_header']").attr("content");
+    $(document).ajaxSend(function (e, xhr, options) {
+        xhr.setRequestHeader(header, token);
+    });
+	$("table#pages tbody").sortable({
+		
+		items:"tr:not(.home)",
+		placeholder:"ui-state-highlight",
+		update:function(){
+			
+			let ids=$("table#pages tbody").sortable("serialize");
+			let url ="/admin/categories/recorder";
+			$.post(url,ids,function(data){
+				console.log(data);
+			});
+		}
+		
+	});
+	
+	
+	</script>
+</body>
+
+</html>

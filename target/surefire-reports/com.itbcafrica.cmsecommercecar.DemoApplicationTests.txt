@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.itbcafrica.cmsecommercecar.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 46.995 s - in com.itbcafrica.cmsecommercecar.DemoApplicationTests
