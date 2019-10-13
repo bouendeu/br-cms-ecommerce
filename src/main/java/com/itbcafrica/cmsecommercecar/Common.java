@@ -25,9 +25,6 @@ public class Common {
 
 	@Autowired
 	private CategoryRepository categoryRepo;
-	@Autowired
-	PageRepository pageRepository;
-
 
 	@ModelAttribute
 	public void sharedData(Model model, HttpSession session, Principal principal) {
@@ -35,8 +32,6 @@ public class Common {
 		if (principal != null) {
 			model.addAttribute("principal", principal.getName());
 		}
-		Page page = pageRepository.findBySlug("home");
-		model.addAttribute("page", page);
 
 		List<Page> pages = pageRepo.findAllByOrderBySortingAsc();
 		List<Category> categories = (List<Category>) categoryRepo.findAll();
