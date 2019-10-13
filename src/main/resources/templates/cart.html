@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
-<head th:replace="/fragment/head"></head>
+<head th:replace="fragment/head"></head>
 
 <body>
-	<nav th:replace="/fragment/nav::nav-front"></nav>
+	<nav th:replace="fragment/nav::nav-front"></nav>
 	<div class="container-fluid mt-5">
 		<div class="row">
-			<div th:replace="/fragment/categories"></div>
+			<div th:replace="fragment/categories"></div>
 			<div class="col"></div>
 			<div class="col-7">
 				<div class="overlay text-center d-none">
@@ -48,7 +48,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><a href="/cart/clear" class="btn btn-danger">Clear
+						<td><a href="cart/clear" class="btn btn-danger">Clear
 								Cart</a></td>
 						<td colspan="4" class="text-right"><a href="#"
 							class="btn btn-success checkout">Checkout</a></td>
@@ -76,7 +76,7 @@
     </form>
 
 	</div>
-	<footer th:replace="/fragment/footer"></footer>
+	<footer th:replace="fragment/footer"></footer>
 	<script>
 		$(function() {
 
