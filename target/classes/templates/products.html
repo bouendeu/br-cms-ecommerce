@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
-<head th:replace="/fragment/head"></head>
+<head th:replace="fragment/head"></head>
 
 <body>
-	<nav th:replace="/fragment/nav::nav-front"></nav>
+	<nav th:replace="fragment/nav::nav-front"></nav>
 	<main role="main">
 
 
@@ -14,7 +14,7 @@
 	<div class="container-fluid mt-5">
 
 		<div class="row">
-			<div th:replace="/fragment/categories"></div>
+			<div th:replace="fragment/categories"></div>
 			<div class="col" />
 
 			<div class="col-8">
@@ -72,7 +72,7 @@
 
 	</main>
 
-	<footer th:replace="/fragment/footer"></footer>
+	<footer th:replace="fragment/footer"></footer>
 	<script>
 	$("a.addToCart").click(function(e){
 		e.preventDefault();

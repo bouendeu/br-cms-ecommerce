@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
-<head th:replace="/fragment/head"></head>
+<head th:replace="fragment/head"></head>
 
 <body>
-	<nav th:replace="/fragment/nav::nav-front"></nav>
+	<nav th:replace="fragment/nav::nav-front"></nav>
 	<div class="container-fluid mt-5">
 		<div class="row">
-			<div th:replace="/fragment/categories"></div>
+			<div th:replace="fragment/categories"></div>
 			<div class="col"></div>
 			 <div class="col-7" th:utext="${page.content}"></div>
 			<div class="col"></div>
 		</div>
 	</div>
-	<footer th:replace="/fragment/footer"></footer>
+	<footer th:replace="fragment/footer"></footer>
 </body>
 
 </html>
