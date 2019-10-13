@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html  xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="fragment/head"></head>
 
@@ -9,7 +11,7 @@
 		<div class="row">
 			<div th:replace="fragment/categories"></div>
 			<div class="col"></div>
-			 <div class="col-7"  th:text="#{seite.content}"></div>
+			 <div class="col-7"  th:utext="#{seite.content}"></div>
 			<div class="col"></div>
 		</div>
 	</div>
