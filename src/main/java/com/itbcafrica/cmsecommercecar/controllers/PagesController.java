@@ -19,8 +19,8 @@ public class PagesController {
 
 	@GetMapping
 	public String home(Model model) {
-		Page page = pageRepository.findBySlug("home");
-		model.addAttribute("page", page);
+		Page seite = pageRepository.findBySlug("home");
+		model.addAttribute("page", seite);
 		return "page";
 	}
 
